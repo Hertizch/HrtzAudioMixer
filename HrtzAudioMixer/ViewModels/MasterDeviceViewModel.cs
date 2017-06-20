@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Timers;
 using System.Windows.Input;
 using CSCore.CoreAudioAPI;
 using HrtzAudioMixer.Annotations;
@@ -32,10 +26,10 @@ namespace HrtzAudioMixer.ViewModels
             TimerHelper.BeginIntervalTimer(100, CommandGetMasterAudioPeak);
         }
 
-        private ICommand _commandGetMasterAudioVolume;
-        private ICommand _commandSetMasterAudioVolume;
-        private ICommand _commandGetMasterAudioPeak;
-        private ICommand _commandGetMasterDeviceName;
+        private RelayCommand _commandGetMasterAudioVolume;
+        private RelayCommand _commandSetMasterAudioVolume;
+        private RelayCommand _commandGetMasterAudioPeak;
+        private RelayCommand _commandGetMasterDeviceName;
         private float _masterAudioLevel;
         private float _masterAudioPeak;
         private bool _masterAudioIsMuted;
@@ -44,7 +38,7 @@ namespace HrtzAudioMixer.ViewModels
         // Properties
         public float MasterAudioLevel
         {
-            get { return _masterAudioLevel; }
+            get => _masterAudioLevel;
             set
             {
                 if (Math.Abs(value - _masterAudioLevel) < 0.001) return;
@@ -59,7 +53,7 @@ namespace HrtzAudioMixer.ViewModels
 
         public float MasterAudioPeak
         {
-            get { return _masterAudioPeak; }
+            get => _masterAudioPeak;
             set
             {
                 if (Math.Abs(value - _masterAudioPeak) < 0.001) return;
@@ -70,7 +64,7 @@ namespace HrtzAudioMixer.ViewModels
 
         public bool MasterAudioIsMuted
         {
-            get { return _masterAudioIsMuted; }
+            get => _masterAudioIsMuted;
             set
             {
                 if (value == _masterAudioIsMuted) return;
@@ -81,7 +75,7 @@ namespace HrtzAudioMixer.ViewModels
 
         public string MasterDeviceName
         {
-            get { return _masterDeviceName; }
+            get => _masterDeviceName;
             set
             {
                 if (value == _masterDeviceName) return;
@@ -95,7 +89,7 @@ namespace HrtzAudioMixer.ViewModels
         /// <summary>
         /// Command - Get master audio volume level
         /// </summary>
-        public ICommand CommandGetMasterAudioVolume
+        public RelayCommand CommandGetMasterAudioVolume
         {
             get
             {
@@ -107,7 +101,7 @@ namespace HrtzAudioMixer.ViewModels
         /// <summary>
         /// Command - Set master audio volume level
         /// </summary>
-        public ICommand CommandSetMasterAudioVolume
+        public RelayCommand CommandSetMasterAudioVolume
         {
             get
             {
@@ -119,7 +113,7 @@ namespace HrtzAudioMixer.ViewModels
         /// <summary>
         /// Command - Gets master audio peak level
         /// </summary>
-        public ICommand CommandGetMasterAudioPeak
+        public RelayCommand CommandGetMasterAudioPeak
         {
             get
             {
@@ -131,7 +125,7 @@ namespace HrtzAudioMixer.ViewModels
         /// <summary>
         /// Command - Set master audio volume level
         /// </summary>
-        public ICommand CommandGetMasterDeviceName
+        public RelayCommand CommandGetMasterDeviceName
         {
             get
             {

@@ -9,7 +9,7 @@ namespace HrtzAudioMixer.Extensions
 {
     public class ObservableList<T> : ObservableCollection<T>
     {
-        bool _isInAddRange;
+        private bool _isInAddRange;
         private readonly Dispatcher _currentDispatcher;
 
         /// <summary>

@@ -10,8 +10,8 @@
         xmlns:tb="http://www.hardcodet.net/taskbar"
         mc:Ignorable="d"
         Title="MainWindow" MinWidth="400" MaxWidth="400" Width="400"
-        Top="{Binding Source={x:Static properties:Settings.Default}, Path=UiWindowPosTop, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=100}"
-        Left="{Binding Source={x:Static properties:Settings.Default}, Path=UiWindowPosLeft, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=100}"
+        Top="{Binding Source={x:Static properties:Settings.Default}, Path=UiWindowPosTop, Mode=TwoWay, UpdateSourceTrigger=LostFocus, Delay=100}"
+        Left="{Binding Source={x:Static properties:Settings.Default}, Path=UiWindowPosLeft, Mode=TwoWay, UpdateSourceTrigger=LostFocus, Delay=100}"
         Topmost="{Binding Source={x:Static properties:Settings.Default}, Path=UiWindowTopMost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
         Style="{StaticResource StyleMainWindow}"
         Closing="MainWindow_OnClosing">
@@ -204,7 +204,7 @@
                             <!-- Icon -->
                             <Grid Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Background="#FF191919" HorizontalAlignment="Center">
                                 <Viewbox Width="32" Height="32" Margin="10">
-                                    <Path Fill="#FF83431D" Stretch="UniformToFill">
+                                    <Path Fill="#FF24678D" Stretch="UniformToFill">
                                         <Path.Style>
                                             <Style TargetType="{x:Type Path}">
                                                 <Setter Property="Data" Value="{StaticResource IconUnknown}" />

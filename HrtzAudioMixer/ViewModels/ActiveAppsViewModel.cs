@@ -3,8 +3,6 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Threading;
-using System.Windows;
 using System.Windows.Input;
 using CSCore.CoreAudioAPI;
 using HrtzAudioMixer.Annotations;
@@ -46,8 +44,8 @@ namespace HrtzAudioMixer.ViewModels
         }
 
         // Private Fields
-        private ICommand _commandResolveActiveAudioSessions;
-        private ICommand _commandSetAudioSessionVolume;
+        private RelayCommand _commandResolveActiveAudioSessions;
+        private RelayCommand _commandSetAudioSessionVolume;
 
         // Public Fields
         public ObservableList<ActiveApp> ActiveAppsCollection { get; set; } = new ObservableList<ActiveApp>();
@@ -57,7 +55,7 @@ namespace HrtzAudioMixer.ViewModels
         /// <summary>
         /// Command - Resolve all active audio sessions
         /// </summary>
-        public ICommand CommandResolveActiveAudioSessions
+        public RelayCommand CommandResolveActiveAudioSessions
         {
             get
             {
@@ -69,7 +67,7 @@ namespace HrtzAudioMixer.ViewModels
         /// <summary>
         /// Command - Set volume level for specified audio session
         /// </summary>
-        public ICommand CommandSetAudioSessionVolume
+        public RelayCommand CommandSetAudioSessionVolume
         {
             get
             {

@@ -16,7 +16,7 @@ namespace HrtzAudioMixer.Models
 
         public string MainWindowTitle
         {
-            get { return _mainWindowTitle; }
+            get => _mainWindowTitle;
             set
             {
                 if (value == _mainWindowTitle) return;
@@ -27,7 +27,7 @@ namespace HrtzAudioMixer.Models
 
         public int ProcessId
         {
-            get { return _processId; }
+            get => _processId;
             set
             {
                 if (value == _processId) return;
@@ -38,7 +38,7 @@ namespace HrtzAudioMixer.Models
 
         public string ProcessName
         {
-            get { return _processName; }
+            get => _processName;
             set
             {
                 if (value == _processName) return;
@@ -49,7 +49,7 @@ namespace HrtzAudioMixer.Models
 
         public string IconPath
         {
-            get { return _iconPath; }
+            get => _iconPath;
             set
             {
                 if (value == _iconPath) return;
@@ -60,7 +60,7 @@ namespace HrtzAudioMixer.Models
 
         public float VolumeLevel
         {
-            get { return _volumeLevel; }
+            get => _volumeLevel;
             set
             {
                 if (Math.Abs(value - _volumeLevel) < 0.001) return;
@@ -71,7 +71,7 @@ namespace HrtzAudioMixer.Models
 
         public bool IsMuted
         {
-            get { return _isMuted; }
+            get => _isMuted;
             set
             {
                 if (value == _isMuted) return;
